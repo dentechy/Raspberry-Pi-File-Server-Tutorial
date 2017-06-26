@@ -12,16 +12,16 @@
         </header>
         <nav>
             <h3>Contents</h3>
-                <a href="#">The Initial Setup</a> |
-                <a href="#">Install Required Software</a> |
-                <a href="#">Setup File Shares</a> |
-                <a href="#">Access File Share from Client Devices</a>
+                <a href="index.html#initial">The Initial Setup</a> |
+                <a href="index.html#install">Install Required Software</a> |
+                <a href="index.html#file-share">Setup File Shares</a> |
+                <a href="index.html#client">Access File Share from Client Devices</a>
         </nav>
 
         <div class="section">
 
         <div class="article">
-        <h2>The Initial Setup</h2>
+          <h2 id="initial"><a name="initial"></a>The Initial Setup</h2>
 
         <div class="paragraph">
         <p>This guide has been developed and tested on a Raspberry Pi 2 running Raspbian, based on Debian 8 “Jessie”. The Raspberry Pi Foundation’s website (<a href="https://www.raspberrypi.org/downloads/noobs/" target="_blank">link</a>) has an easy to setup installer called NOOBS, short for New Out Of the Box Software. For this setup, you will need to connect your Raspberry Pi to a power source (capable of at least 2A, especially for directly connected hard drives), a monitor, mouse and keyboard. Advanced users can proceed using SSH, if setup on their system.</p>
@@ -29,42 +29,42 @@
         <p>Once you complete this tutorial, you will be able to access files stored on your Raspberry Pi through your smartphone or computer (compatible with Android, iOS, Windows, Linux, macOS).</p>
         </div>
 
-        <h2>Install Required Software</h2>
+        <h2 id="install"><a name="install"></a>Install Required Software</h2>
 
         <div class="paragraph">
         <p>Open the terminal and run the following command to ensure all packages are up to date:</p>
 
-        <p>sudo apt-get update && sudo apt-get dist-upgrade</p>
+        <p id="code">sudo apt-get update && sudo apt-get dist-upgrade</p>
 
         <p>Next install the “samba” package:</p>
 
-        <p>sudo apt-get install samba</p>
+        <p id="code">sudo apt-get install samba</p>
 
         <p>Next ensure that a text editor is installed. Gedit is a good one if using a desktop environment, otherwise vim or nano work well in command-line only environments. The relevant commands to install your text editor of choice:</p>
 
-        <p>sudo apt-get install gedit</p>
-        <p>sudo apt-get install vim</p>
-        <p>sudo apt-get install nano</p>
+        <p id="code">sudo apt-get install gedit</p>
+        <p id="code">sudo apt-get install vim</p>
+        <p id="code">sudo apt-get install nano</p>
 
         </div>
 
-        <h2>Setup File Shares</h2>
+        <h2 id="file-share"><a name="file-share"></a>Setup File Shares</h2>
 
         <div class="paragraph">
         <p>Depending on the text editor preferred, use one of the following commands to open a configuration file to setup file shares:</p>
 
-        <p>sudo gedit /etc/samba/smb.conf
+        <p id="code">sudo gedit /etc/samba/smb.conf
         <br>[edits the file in gedit]</p>
 
-        <p>sudo vi /etc/samba/smb.conf
+        <p id="code">sudo vi /etc/samba/smb.conf
         <br>[edits the file in vim]</p>
 
-        <p>sudo nano -w /etc/samba/smb.conf
+        <p id="code">sudo nano -w /etc/samba/smb.conf
         <br>[edits the file in nano]</p>
 
         <p>Navigate all the way to the bottom of the file. Ignore, but do not remove the preceding text as it contains useful information for future configurations. Setup your file share with the following parameters, changing the name of the share (instead of [File-share]), comment, path and valid users according to your local setup:</p>
 
-        <p>[File-share]
+        <p id="code">[File-share]
         <br>comment = Shared files
         <br>path = /home/pi/shared_folder
         <br>browseable = yes
@@ -73,16 +73,16 @@
 
         <p>Save changes and close the file. Make sure to change the <strong>path</strong> to the location of the folder or hard drive you want to share to your local network. The browseable option ensures that the file share can be discovered in the local network without manually entering the IP address of the Raspberry Pi. The valid users line is important for securing your file share so that no one can access your data without knowing your username and password. Use the following command to create a password for your username:</p>
 
-        <p>sudo smbpasswd -a username</p>
+        <p id="code">sudo smbpasswd -a username</p>
 
         <p>Remember to replace username in the command with the user that is logged in the Raspberry Pi. Finally, use the following commands to reset the samba service so that it recognizes the changes made to your configuration file:</p>
 
-        <p>sudo systemctl restart smbd
+        <p id="code">sudo systemctl restart smbd
         <br>sudo systemctl restart nmbd</p>
 
         </div>
         
-        <h2>Access File Share from Client Devices</h2>
+        <h2 id="client"><a name="client"></a>Access File Share from Client Devices</h2>
 
         <div class="paragraph">
         <p>Coming soon.</p>
@@ -102,10 +102,8 @@
         <div class="footer">
             <h3>Useful links</h3>
 
-            <ul>
-                <li><a href="https://help.ubuntu.com/community/Samba/SambaServerGuide" target="_blank">Samba/Samba Server Guide</a></li>
-                <li><a href="https://www.raspberrypi.org/" target="_blank">Raspberry Pi Foundation</a></li>
-            </ul>
+                <p><a href="https://help.ubuntu.com/community/Samba/SambaServerGuide" target="_blank">Samba/Samba Server Guide</a></p>
+                <p><a href="https://www.raspberrypi.org/" target="_blank">Raspberry Pi Foundation</a></p>
         </div>
     </body>
 
