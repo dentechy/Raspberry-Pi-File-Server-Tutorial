@@ -1,7 +1,7 @@
 # Raspberry Pi File Server Walkthrough
 
 ## Contents
-[The Initial Setup](#the-initial-setup) | [Install Required Software](#install-required-software) | Setup File Shares | Access File Share from Client Devices
+[The Initial Setup](#the-initial-setup) | [Install Required Software](#install-required-software) | [Setup File Shares](#setup-file-shares) | Access File Share from Client Devices
 
 ![Raspberry Pi 2](raspberrypi_fileserver.jpg)
 
@@ -31,3 +31,37 @@ Next ensure that a text editor is installed. Gedit is a good one if using a desk
 
 `sudo apt-get install nano`
 
+## Setup File Shares
+
+Depending on the text editor preferred, use one of the following commands to open a configuration file to setup file shares:
+
+`sudo gedit /etc/samba/smb.conf` 
+[edits the file in gedit]
+
+`sudo vi /etc/samba/smb.conf` 
+[edits the file in vim]
+
+`sudo nano -w /etc/samba/smb.conf` 
+[edits the file in nano]
+
+Navigate all the way to the bottom of the file. Ignore, but do not remove the preceding text as it contains useful information for future configurations. Setup your file share with the following parameters, changing the name of the share (instead of [File-share]), comment, path and valid users according to your local setup:
+
+```
+[File-share] 
+comment = Shared files 
+path = /home/pi/shared_folder 
+browseable = yes 
+writable = yes 
+valid users = pi
+```
+
+Save changes and close the file. Make sure to change the path to the location of the folder or hard drive you want to share to your local network. The browseable option ensures that the file share can be discovered in the local network without manually entering the IP address of the Raspberry Pi. The valid users line is important for securing your file share so that no one can access your data without knowing your username and password. Use the following command to create a password for your username:
+
+`sudo smbpasswd -a username`
+
+Remember to replace username in the command with the user that is logged in the Raspberry Pi. Finally, use the following commands to reset the samba service so that it recognizes the changes made to your configuration file:
+
+```
+sudo systemctl restart smbd 
+sudo systemctl restart nmbd
+```
