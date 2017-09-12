@@ -1,7 +1,7 @@
 # Raspberry Pi File Server Walkthrough
 
 ## Contents
-[The Initial Setup](#the-initial-setup) | [Install Required Software](#install-required-software) | [Setup File Shares](#setup-file-shares) | Access File Share from Client Devices
+[The Initial Setup](#the-initial-setup) | [Install Required Software](#install-required-software) | [Setup File Shares](#setup-file-shares) | [Access File Share from Client Devices](#access-file-share-from-client-devices)
 
 ![Raspberry Pi 2](raspberrypi_fileserver.jpg)
 
@@ -65,3 +65,7 @@ Remember to replace username in the command with the user that is logged in the 
 sudo systemctl restart smbd 
 sudo systemctl restart nmbd
 ```
+
+## Access File Share from Client Devices
+
+Coming soon.
