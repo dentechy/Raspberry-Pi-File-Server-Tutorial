@@ -2,16 +2,21 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Raspberry Pi file server guide</title>
+        <!--Bootstrap-->
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link href="assets/css/style.css" rel="stylesheet" type="text/css">
     </head>
 
     <body>
+      <div class="container-fluid">
         <header>
             <h1>How to Create a Raspberry Pi File Server</h1>
             <p>By Dennis Feliciano</p>
         </header>
-        <nav>
+        <nav class="navbar">
             <h3>Contents</h3>
                 <a href="index.html#initial">The Initial Setup</a> |
                 <a href="index.html#install">Install Required Software</a> |
@@ -23,30 +28,51 @@
 
         <div class="article">
           <h2 id="initial"><a name="initial"></a>The Initial Setup</h2>
+        <div class="row">
+        <div class="col-md-6" id="initial-setup">
+          <p>This guide has been developed and tested on a Raspberry Pi 2 running Raspbian, based on Debian 8 “Jessie”. The Raspberry Pi Foundation’s website (<a href="https://www.raspberrypi.org/downloads/noobs/" target="_blank">link</a>) has an easy to setup installer called NOOBS, short for New Out Of the Box Software. For this setup, you will need to connect your Raspberry Pi to a power source (capable of at least 2A, especially for directly connected hard drives), a monitor, mouse and keyboard. Advanced users can proceed using SSH, if setup on their system.<br><br>
 
-        <div class="paragraph">
-        <p>This guide has been developed and tested on a Raspberry Pi 2 running Raspbian, based on Debian 8 “Jessie”. The Raspberry Pi Foundation’s website (<a href="https://www.raspberrypi.org/downloads/noobs/" target="_blank">link</a>) has an easy to setup installer called NOOBS, short for New Out Of the Box Software. For this setup, you will need to connect your Raspberry Pi to a power source (capable of at least 2A, especially for directly connected hard drives), a monitor, mouse and keyboard. Advanced users can proceed using SSH, if setup on their system.</p>
-
-        <p>Once you complete this tutorial, you will be able to access files stored on your Raspberry Pi through your smartphone or computer (compatible with Android, iOS, Windows, Linux, macOS).</p>
+        Once you complete this tutorial, you will be able to access files stored on your Raspberry Pi through your smartphone or computer (compatible with Android, iOS, Windows, Linux, macOS).</p>
         </div>
-
+        <div class="col-md-6">
+            <img id="rpi2" src="assets/images/raspberrypi_fileserver.jpg">
+            <p id="rpi2-descriptor">A Raspberry Pi 2 running Raspbian, based on Debian 8 "Jessie". It is attached to a standard 2.5 inch HDD and a 3.5 inch HDD (not shown). For maximum throughput, it is connected via ethernet to the local network.</p>
+        </div>
+        </div>
         <h2 id="install"><a name="install"></a>Install Required Software</h2>
-
-        <div class="paragraph">
-        <p>Open the terminal and run the following command to ensure all packages are up to date:</p>
-
-        <p id="code">sudo apt-get update && sudo apt-get dist-upgrade</p>
-
-        <p>Next install the “samba” package:</p>
-
-        <p id="code">sudo apt-get install samba</p>
-
-        <p>Next ensure that a text editor is installed. Gedit is a good one if using a desktop environment, otherwise vim or nano work well in command-line only environments. The relevant commands to install your text editor of choice:</p>
-
-        <p id="code">sudo apt-get install gedit</p>
-        <p id="code">sudo apt-get install vim</p>
-        <p id="code">sudo apt-get install nano</p>
-
+    
+        <div class="row">
+        <div class="col-md-6" id="installation">
+        <p>Open the terminal and run the following command to ensure all packages are up to date:
+        <br>
+        <br>
+        <a id="code">sudo apt-get update && sudo apt-get dist-upgrade</a>
+        <br>
+        <br>
+        Next install the “samba” package:
+        <br>
+        <br>
+        <a id="code">sudo apt-get install samba</a>
+        <br>
+        <br>
+        Next ensure that a text editor is installed. Gedit is a good one if using a desktop environment, otherwise vim or nano work well in command-line only environments. The relevant commands to install your text editor of choice:
+        <br>
+        <br>
+        <a id="code">sudo apt-get install gedit</a>
+        <br>
+        <br>
+        <a id="code">sudo apt-get install vim</a>
+        <br>
+        <br>
+        <a id="code">sudo apt-get install nano</a>
+        <br>
+        <br>
+        </p>
+        </div>
+        <div class="col-md-6">
+          <img id="rpi-update" src="assets/images/rpi-update2.PNG" alt="rpi-update">
+          <p>Make sure your Raspberry Pi is up to date!</p>
+        </div>
         </div>
 
         <h2 id="file-share"><a name="file-share"></a>Setup File Shares</h2>
@@ -95,10 +121,6 @@
 
         </div>
 
-        <div class="aside">
-            <img src="assets/images/raspberrypi_fileserver.jpg">
-            <p>A Raspberry Pi 2 running Raspbian, based on Debian 8 "Jessie". It is attached to a standard 2.5 inch HDD and a 3.5 inch HDD (not shown). For maximum throughput, it is connected via ethernet to the local network.</p>
-        </div>
 
         <div class="footer">
             <h3>Useful links</h3>
@@ -106,6 +128,7 @@
                 <p><a href="https://help.ubuntu.com/community/Samba/SambaServerGuide" target="_blank">Samba/Samba Server Guide</a></p>
                 <p><a href="https://www.raspberrypi.org/" target="_blank">Raspberry Pi Foundation</a></p>
         </div>
+      </div>
     </body>
 
 </html>

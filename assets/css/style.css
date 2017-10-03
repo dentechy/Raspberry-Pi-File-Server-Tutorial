@@ -1,40 +1,28 @@
 
 body {
     background-color: #777;
-    /*color: #ebebeb;*/
-    width: 960px;
     font-family: 'Arial', 'Helvetica Neue', 'Helvetica', sans-serif;
     font-size: 18px;
     margin: 50px;
     margin-top: 10px;
 }
 
-header, nav, .section, .aside, .footer {
+header, nav, .section, .footer {
     background-color: #ebebeb;
     color: #777;
     margin: 10px;
     text-align: center;
 }
 
+
 header {
     padding: 10px;
 }
 
-nav {
-    text-align: left;
-}
-
 .section {
-    width: 495px;
-    float: left;
     padding: 10px;
 }
 
-.aside {
-    width: 380px;
-    padding: 10px;
-    float: left;
-}
 
 .article {
     background-color: #777;
@@ -47,11 +35,6 @@ nav {
     padding: 5px;
 }
 
-.paragraph {
-    background-color: #ebebeb;
-    color: #777;
-    text-align: left;
-}
 
 .footer {
     padding: 15px;
@@ -60,4 +43,18 @@ nav {
 
 #code {
     font-family: "Monaco";
+}
+
+#initial-setup, #installation {
+    padding-left: 15px;
+    text-align: left;
+  }
+
+#rpi2, #rpi-update {
+  padding-bottom: 10px;
+}
+
+a#code {
+    text-decoration: none !important;
+    color: #777;
 }
