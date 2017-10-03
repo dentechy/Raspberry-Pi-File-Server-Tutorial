@@ -81,18 +81,21 @@
 
         <div class="row">
         <div class="col-sm-6">
-        <p>Depending on the text editor preferred, use one of the following commands to open a configuration file to setup file shares:</p>
+        <p>Depending on the text editor preferred, use one of the following commands to open a configuration file to setup file shares:
+        <br>
+        <br>
+        <a id="code">sudo gedit /etc/samba/smb.conf
+        <br>[edits the file in gedit]</a>
 
-        <p id="code">sudo gedit /etc/samba/smb.conf
-        <br>[edits the file in gedit]</p>
-
-        <p id="code">sudo vi /etc/samba/smb.conf
-        <br>[edits the file in vim]</p>
-
-        <p id="code">sudo nano -w /etc/samba/smb.conf
-        <br>[edits the file in nano]</p>
-
-        <p>Navigate all the way to the bottom of the file. Ignore, but do not remove the preceding text as it contains useful information for future configurations. Setup your file share with the following parameters, changing the name of the share (instead of [File-share]), comment, path and valid users according to your local setup:</p>
+        <br>
+        <a id="code">sudo vi /etc/samba/smb.conf
+        <br>[edits the file in vim]</a>
+        <br>
+        <a id="code">sudo nano -w /etc/samba/smb.conf
+        <br>[edits the file in nano]</a>
+        <br>
+        <br>
+        Navigate all the way to the bottom of the file. Ignore, but do not remove the preceding text as it contains useful information for future configurations. Setup your file share with the following parameters, changing the name of the share (instead of [File-share]), comment, path and valid users according to your local setup:</p>
 
         <p id="code">[File-share]
         <br>comment = Shared files
