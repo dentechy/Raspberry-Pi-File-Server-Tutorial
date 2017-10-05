@@ -80,21 +80,18 @@
         <h2 id="file-share"><a name="file-share"></a>Setup File Shares</h2>
 
         <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-6" id="file-share-setup">
         <p>Depending on the text editor preferred, use one of the following commands to open a configuration file to setup file shares:
-        <br>
-        <br>
+        <br><br>
         <a id="code">sudo gedit /etc/samba/smb.conf
         <br>[edits the file in gedit]</a>
-
         <br>
         <a id="code">sudo vi /etc/samba/smb.conf
         <br>[edits the file in vim]</a>
         <br>
         <a id="code">sudo nano -w /etc/samba/smb.conf
         <br>[edits the file in nano]</a>
-        <br>
-        <br>
+        <br><br>
         Navigate all the way to the bottom of the file. Ignore, but do not remove the preceding text as it contains useful information for future configurations. Setup your file share with the following parameters, changing the name of the share (instead of [File-share]), comment, path and valid users according to your local setup:
         <br>
         <br>
@@ -109,16 +106,21 @@
         <a id="code">writable = yes</a>
         <br>
         <a id="code">valid users = pi</a>
-        <br>
-        <br>
-        Save changes and close the file. Make sure to change the <strong>path</strong> to the location of the folder or hard drive you want to share to your local network. The browseable option ensures that the file share can be discovered in the local network without manually entering the IP address of the Raspberry Pi. The valid users line is important for securing your file share so that no one can access your data without knowing your username and password. Use the following command to create a password for your username:</p>
-
-        <p id="code">sudo smbpasswd -a username</p>
-
-        <p>Remember to replace username in the command with the user that is logged in the Raspberry Pi. Finally, use the following commands to reset the samba service so that it recognizes the changes made to your configuration file:</p>
-
-        <p id="code">sudo systemctl restart smbd
-        <br>sudo systemctl restart nmbd</p>
+        <br><br>
+        Save changes and close the file. Make sure to change the <strong>path</strong> to the location of the folder or hard drive you want to share to your local network. The browseable option ensures that the file share can be discovered in the local network without manually entering the IP address of the Raspberry Pi. The valid users line is important for securing your file share so that no one can access your data without knowing your username and password. Use the following command to create a password for your username:
+        <br><br>
+        <a id="code">sudo smbpasswd -a username</a>
+        <br><br>
+        Remember to replace username in the command with the user that is logged in the Raspberry Pi. Finally, use the following commands to reset the samba service so that it recognizes the changes made to your configuration file:
+        <br><br>
+        <a id="code">sudo systemctl restart smbd
+        <br>sudo systemctl restart nmbd</a>
+        <br><br>
+        </p>
+        </div>
+        <div class="col-md-6">
+          <img id="rpi-smb" src="assets/images/rpi-smb.PNG" alt="rpi-smb">
+            <p>The default configuration file, located at /etc/samba/smb.conf</p>
 
         </div>
         </div>
