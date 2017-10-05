@@ -3,7 +3,7 @@
 ## Contents
 [The Initial Setup](#the-initial-setup) | [Install Required Software](#install-required-software) | [Setup File Shares](#setup-file-shares) | [Access File Share from Client Devices](#access-file-share-from-client-devices)
 
-![Raspberry Pi 2](raspberrypi_fileserver.jpg)
+![Raspberry Pi 2](assets/images/raspberrypi_fileserver.jpg)
 
 A Raspberry Pi 2 running Raspbian, based on Debian 8 "Jessie". It is attached to a standard 2.5 inch HDD and a 3.5 inch HDD (not shown). For maximum throughput, it is connected via ethernet to the local network.
 
