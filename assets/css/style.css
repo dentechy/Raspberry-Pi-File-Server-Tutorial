@@ -44,12 +44,12 @@ header {
     font-family: "Monaco";
 }
 
-#initial-setup, #installation, #file-share-setup {
+#initial-setup, #installation, #file-share-setup, #client-devices {
     padding-left: 15px;
     text-align: left;
   }
 
-#rpi-update, #rpi-smb {
+#rpi-update, #rpi-smb, #es-file1, #es-file2, #es-file3, #es-file4 {
   padding-bottom: 10px;
   width: 95%;
 }
@@ -62,5 +62,12 @@ header {
 a#code {
     text-decoration: none !important;
     color: #777;
+}
+
+a#client-section {
+    text-decoration: none !important;
+    color: #777;
+    font-size: 20px;
+    font-weight: 700;
 }
 
