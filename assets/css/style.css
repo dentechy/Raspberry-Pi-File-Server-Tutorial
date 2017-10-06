@@ -41,7 +41,7 @@ header {
 }
 
 #code {
-    font-family: "Monaco";
+    font-family: "Inconsolata", monospace;
 }
 
 #initial-setup, #installation, #file-share-setup, #client-devices {
