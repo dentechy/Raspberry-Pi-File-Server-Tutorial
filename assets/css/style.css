@@ -49,7 +49,7 @@ header {
     text-align: left;
   }
 
-#rpi-update, #rpi-smb, #es-file1, #es-file2, #es-file3, #es-file4 {
+#rpi-update, #rpi-smb, #es-file1, #es-file2, #es-file3, #es-file4, #es-file5 {
   padding-bottom: 10px;
   width: 95%;
 }
