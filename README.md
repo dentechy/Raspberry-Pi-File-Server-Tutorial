@@ -72,7 +72,7 @@ sudo systemctl restart nmbd
 
 Now that your raspberry pi has been setup to run the file server, it is time now to view files through your client devices. These devices can include Android smartphones, iPhones, iPads, Windows PCs, MacBooks, and even Chromebooks. Instructions will vary depending on the device in question. 
 
-###Android
+### Android
 
 Android devices unfortunately do not have a built-in client for viewing files over the network. No need to worry though as there are plenty of high quality third-party apps available on the Google Play Store. For the purposes of this tutorial, access will be shown through [ES File Explorer](https://play.google.com/store/apps/details?id=com.estrongs.android.pop&hl=en) though there are plenty of other available options to choose from. 
 
